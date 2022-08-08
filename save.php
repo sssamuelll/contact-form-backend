@@ -25,9 +25,9 @@
             die("Query Failed");
         }
 
-        $response = [ "response" => "contact added"]
+        $response = [ "response" => "contact added"];
         echo json_encode($response);
-        
+
     }
 
 ?>
