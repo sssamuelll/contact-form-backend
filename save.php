@@ -1,9 +1,14 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: *");
+
+    $_POST = json_decode(file_get_contents('php://input'), true);
+    
 
     include("db.php");
 
     if (isset($_POST)){
-
+        /*
         $nombre             =   $_POST['name_txt'];
         $primer_apellido    =   $_POST['last_name_1'];
         $segundo_apellido   =   $_POST['last_name_2'];
@@ -24,10 +29,14 @@
         if (!$result) {
             die("Query Failed");
         }
-
+        */
         $response = [ "response" => "contact added"];
         echo json_encode($response);
 
+    } else if (isset($_GET)){
+        echo json_encode(["response" => "Yolanda Segovia"]);
+    } else {
+        echo "UPS";
     }
 
 ?>
